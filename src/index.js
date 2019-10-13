@@ -4,3 +4,13 @@ import ReactDOM from 'react-dom';
 
 
 ReactDOM.render(<FormContainer />, document.getElementById("root")) ;
+
+
+if (module.hot) {
+    // Whenever a new version of App.js is available
+    module.hot.accept('./js/components/container/FormContainer.jsx', function () {
+      // Require the new version and render it instead
+      ReactDOM.render(<FormContainer />, document.getElementById("root")) ;
+    // console.log("test")
+    })
+  }

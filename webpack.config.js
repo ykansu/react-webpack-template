@@ -16,7 +16,11 @@ module.exports = {
             loader: "html-loader"
           }
         ]
-      }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
     ]
   },
   plugins: [
@@ -24,5 +28,9 @@ module.exports = {
       template: "./src/index.html",
       filename: "./index.html"
     })
-  ]
+  ],
+  devtool: 'inline-source-map',
+  devServer: {
+    hot: true,
+  }
 };
